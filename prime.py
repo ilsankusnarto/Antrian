@@ -11,3 +11,4 @@ def prime (bilanganka):
 tes = prime(2)
 print(tes)
 #komentarkami
+haloooo
