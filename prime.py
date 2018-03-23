@@ -1,7 +1,7 @@
-def prime (bilangan):
+def prime (bilangank):
     count = 0
-    for i in range (1,bilangan+1):
-        if (bilangan % i ==0):
+    for i in range (1,bilangank+1):
+        if (bilangank % i ==0):
             count+=1
     if(count==2):
         return "prime"
@@ -10,3 +10,4 @@ def prime (bilangan):
 
 tes = prime(2)
 print(tes)
+#komentarkami
