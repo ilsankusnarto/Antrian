@@ -1,0 +1,32 @@
+# poker pair
+kartu=["2S","2L","2K","2W","3S","3L","3K","3W","4S","4L","4K","4W",
+        "5S", "5L", "5K", "5W","6S","6L","6K","6W","7S","7L","7K","7W",
+        "8S", "8L", "8K", "8W","9S","9L","9K","9W","10S","10L","10K","10W",
+        "JS", "JL", "JK", "JW","QS","QL","QK","QW","KS","KL","KK","KW","AS","AL","AK","AW"]
+x=[]
+z=0
+for i in range(0,52,4):
+    for j in range(i,i+4): # 2 kartu awal
+        x.append(kartu[j])
+    for k in reversed(range(i+1,i+4)): # 2 kartu awal
+        x.remove(kartu[k])
+        for l in reversed(range(i,k)): # 2 kartu awal
+            x.remove(kartu[l])
+            for m in range(52): # 1 kartu tengah
+                if (x[1][0]!= kartu[m][0]):
+                    x.append(kartu[m])
+                    for n in range(m,52):    # 1 kartu 2 terakhir
+                        if ((x[0][0]!=kartu[n][0]) and (x[2][0]!=kartu[n][0])):
+                            x.append(kartu[n])
+                            for o in range (n,52):
+                                if ((x[0][0]!=kartu[o][0]) and (x[2][0]!=kartu[o][0]) and (x[3][0]!=kartu[o][0])):
+                                    x.append(kartu[o])
+                                    print(x)
+                                    z+=1
+                                    x.remove(kartu[o])
+                            x.remove(kartu[n])
+                    x.remove(kartu[m])
+            x.append(kartu[l])
+        x.append(kartu[k])
+    x.clear()
+print("jumlah: ",z)
